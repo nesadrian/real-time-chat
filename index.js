@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 socketIO.on('connection', (socket) => {
     console.log("User connected")
     socket.on('message', (msg) => {
-        console.log(msg);
+        socketIO.emit('message', msg);
     })
     socket.on('disconnect', () => {
         console.log("User disconnected");
