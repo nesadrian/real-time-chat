@@ -8,8 +8,11 @@ app.get('/', (req, res) => {
 
 socketIO.on('connection', (socket) => {
     console.log("User connected")
+    socket.on('message', (msg) => {
+        console.log(msg);
+    })
     socket.on('disconnect', () => {
-      console.log('User disconnected');
+        console.log("User disconnected");
     });
 })
 
