@@ -1,0 +1,75 @@
+#header {
+    background-color: white;
+    height: 7.5vh;
+    background-color: #EF6D3B;
+}
+
+#header-title {
+    margin: 0;
+    font-size: 2em;
+}
+
+#content {
+    height: 83.5vh;
+    width: 100vw;
+    overflow:hidden;
+    overflow-y:scroll;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#footer {
+    bottom: 0;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#message-list {
+    list-style-type: none;
+    font-size: 25px;
+    color: white;
+}
+
+#message-list-container {
+    background-color: #423453;
+    height: 100%;
+    width: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FA8B60;
+}
+
+#message-form {
+    height: 100%;
+    width: 100%;
+}
+
+#message-input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 80%;
+    font-size: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FA8B60;
+}
+
+#message-submit {
+    width: 10%;
+    height: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FA8B60;
+}
+
+body {
+    background-color: #3F2860;
+    margin: 0;
+}

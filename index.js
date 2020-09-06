@@ -1,6 +1,9 @@
 const app = require('express')();
+const express = require('express');
 const http = require('http').createServer(app);
 const socketIO = require('socket.io')(http);
+
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');

@@ -3,32 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <title>Real Time Chat</title>
     </head>
     <body>
-        <h1>Real Time Chat</h1>
-        <form id="messageForm">
-            <input id="messageInput"/>
-            <input type="submit" value="Send"/>
-        </form>
-        <ol id="messageList"/>
+        <div id="header">
+            <h1 id="header-title">Real Time Chat</h1>
+        </div>
+        <div id="content">
+            <div id="message-list-container">
+                <ol id="message-list"/>
+            </div>
+        </div>
+        <div id="footer">
+            <form id="message-form">
+                <input id="message-input"/>
+                <input id="message-submit" type="submit" value="Send"/>
+            </form>
+        </div>
         <script src="/socket.io/socket.io.js"></script>
         <script>
             const socket = io();
-            const messageInput = document.getElementById("messageInput");
-            const messageForm = document.getElementById("messageForm");
+            const messageInput = document.getElementById("message-input");
+            const messageForm = document.getElementById("message-form");
             messageForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 socket.emit('message', messageInput.value);
                 messageInput.value = '';
             });
 
-            const messageList = document.getElementById("messageList");
+            const messageList = document.getElementById("message-list");
             socket.on('message', (msg) => {
                 const li = document.createElement("li");
                 li.appendChild(document.createTextNode(msg));
                 messageList.appendChild(li);
-            })
+            });
         </script>
     </body>
 </html>
