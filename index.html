@@ -23,7 +23,9 @@
         </div>
         <script src="/socket.io/socket.io.js"></script>
         <script>
+            const username = prompt("Enter username");
             const socket = io();
+            socket.emit("adduser", username);
             const messageInput = document.getElementById("message-input");
             const messageForm = document.getElementById("message-form");
             messageForm.addEventListener('submit', (e) => {
@@ -33,9 +35,10 @@
             });
 
             const messageList = document.getElementById("message-list");
-            socket.on('message', (msg) => {
+            socket.on('message', (msg, username) => {
+                const message = username + ": " + msg
                 const li = document.createElement("li");
-                li.appendChild(document.createTextNode(msg));
+                li.appendChild(document.createTextNode(message));
                 messageList.appendChild(li);
             });
         </script>

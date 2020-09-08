@@ -10,9 +10,12 @@ app.get('/', (req, res) => {
 });
 
 socketIO.on('connection', (socket) => {
+    socket.on('adduser', (username) => {
+        socket.username = username
+    })
     console.log("User connected")
     socket.on('message', (msg) => {
-        socketIO.emit('message', msg);
+        socketIO.emit('message', msg, socket.username);
     })
     socket.on('disconnect', () => {
         console.log("User disconnected");
