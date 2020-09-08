@@ -9,16 +9,23 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+const userList = [];
+
 socketIO.on('connection', (socket) => {
     socket.on('adduser', (username) => {
-        socket.username = username
+        socket.username = username;
+        userList.push(username);
+        socketIO.emit('updateUserlist', userList);
     })
-    console.log("User connected")
+
     socket.on('message', (msg) => {
         socketIO.emit('message', msg, socket.username);
     })
+
     socket.on('disconnect', () => {
-        console.log("User disconnected");
+        var index = userList.indexOf(socket.username);
+        userList.splice(index, 1);
+        socketIO.emit('updateUserlist', userList);
     });
 })
 

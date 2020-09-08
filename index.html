@@ -14,6 +14,9 @@
             <div id="message-list-container">
                 <ol id="message-list"/>
             </div>
+            <div id="user-list-container">
+                <ol id="user-list"/>
+            </div>
         </div>
         <div id="footer">
             <form id="message-form">
@@ -26,6 +29,7 @@
             const username = prompt("Enter username");
             const socket = io();
             socket.emit("adduser", username);
+
             const messageInput = document.getElementById("message-input");
             const messageForm = document.getElementById("message-form");
             messageForm.addEventListener('submit', (e) => {
@@ -34,12 +38,22 @@
                 messageInput.value = '';
             });
 
-            const messageList = document.getElementById("message-list");
+            const messageListElement = document.getElementById("message-list");
             socket.on('message', (msg, username) => {
                 const message = username + ": " + msg
                 const li = document.createElement("li");
                 li.appendChild(document.createTextNode(message));
-                messageList.appendChild(li);
+                messageListElement.appendChild(li);
+            });
+
+            const userListElement = document.getElementById("user-list");
+            socket.on('updateUserlist', userList => {
+                userListElement.innerHTML = null || "";
+                for(user in userList) {
+                    let li = document.createElement("li");
+                    li.appendChild(document.createTextNode(userList[user]));
+                    userListElement.appendChild(li);
+                }
             });
         </script>
     </body>

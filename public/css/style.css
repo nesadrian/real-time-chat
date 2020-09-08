@@ -34,12 +34,30 @@
 }
 
 #message-list-container {
+    float: left;
     background-color: #423453;
     height: 100%;
-    width: 100%;
+    width: 70%;
     border-width: 3px;
     border-style: solid;
     border-color: #FA8B60;
+}
+
+#user-list-container {
+    float: left;
+    margin-left: 20px;
+    width: 25%;
+    height: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FA8B60;
+    background-color: #423453;
+}
+
+#user-list {
+    list-style-type: none;
+    font-size: 25px;
+    color: white;
 }
 
 #message-form {
