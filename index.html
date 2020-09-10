@@ -9,6 +9,7 @@
     <body>
         <div id="header">
             <h1 id="header-title">Real Time Chat</h1>
+            <button id="login-button">Login</button>
         </div>
         <div id="content">
             <div id="message-list-container">
@@ -32,10 +33,15 @@
 
             const messageInput = document.getElementById("message-input");
             const messageForm = document.getElementById("message-form");
+
+            
+
             messageForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                socket.emit('message', messageInput.value);
-                messageInput.value = '';
+                if(messageInput.value) {
+                    socket.emit('message', messageInput.value);
+                    messageInput.value = '';
+                }
             });
 
             const messageListElement = document.getElementById("message-list");

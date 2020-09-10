@@ -1,28 +1,45 @@
 #header {
     background-color: white;
-    height: 7.5vh;
+    height: 55px;
     background-color: #EF6D3B;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 750px;
 }
 
 #header-title {
-    margin: 0;
     font-size: 2em;
+    position: absolute;
+    right: 50%;
+}
+
+#login-button {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #FA8B60;
 }
 
 #content {
     height: 83.5vh;
+    min-width: 750px;
     width: 100vw;
     overflow:hidden;
     overflow-y:scroll;
     box-sizing: border-box;
     padding: 20px;
+    margin-bottom: 75px;
 }
 
 #footer {
     bottom: 0;
     position: absolute;
-    height: 10vh;
+    height: 75px;
     width: 100vw;
+    min-width: 750px;
     box-sizing: border-box;
     padding: 20px;
 }
@@ -63,6 +80,7 @@
 #message-form {
     height: 100%;
     width: 100%;
+    display: none;
 }
 
 #message-input {
