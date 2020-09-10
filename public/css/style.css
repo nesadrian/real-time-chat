@@ -1,7 +1,7 @@
 #header {
-    background-color: white;
+    background-color: #f7fafc;
     height: 55px;
-    background-color: #EF6D3B;
+    background-color: #1a2432;
     display: flex;
     align-items: center;
     position: relative;
@@ -12,6 +12,7 @@
     font-size: 2em;
     position: absolute;
     right: 50%;
+    color: #f7fafc;
 }
 
 #login-button {
@@ -20,7 +21,7 @@
     margin-right: 20px;
     border-width: 3px;
     border-style: solid;
-    border-color: #FA8B60;
+    border-color: #81e6d9;
 }
 
 #content {
@@ -31,7 +32,6 @@
     overflow-y:scroll;
     box-sizing: border-box;
     padding: 20px;
-    margin-bottom: 75px;
 }
 
 #footer {
@@ -47,34 +47,34 @@
 #message-list {
     list-style-type: none;
     font-size: 25px;
-    color: white;
+    color: #f7fafc;
 }
 
 #message-list-container {
     float: left;
-    background-color: #423453;
+    background-color: #283141;
     height: 100%;
     width: 70%;
     border-width: 3px;
     border-style: solid;
-    border-color: #FA8B60;
+    border-color: #81e6d9;
+    margin-right: 20px;
 }
 
 #user-list-container {
     float: left;
-    margin-left: 20px;
-    width: 25%;
+    width: 28.47%;
     height: 100%;
     border-width: 3px;
     border-style: solid;
-    border-color: #FA8B60;
-    background-color: #423453;
+    border-color: #81e6d9;
+    background-color: #2d3748;
 }
 
 #user-list {
     list-style-type: none;
     font-size: 25px;
-    color: white;
+    color: #f7fafc;
 }
 
 #message-form {
@@ -94,7 +94,9 @@
     padding-right: 10px;
     border-width: 3px;
     border-style: solid;
-    border-color: #FA8B60;
+    border-color: #81e6d9;
+    background-color: #1a2432;
+    color: #f7fafc;
 }
 
 #message-submit {
@@ -102,10 +104,10 @@
     height: 100%;
     border-width: 3px;
     border-style: solid;
-    border-color: #FA8B60;
+    border-color: #81e6d9;
 }
 
 body {
-    background-color: #3F2860;
+    background-color: #2d3748;
     margin: 0;
 }

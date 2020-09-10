@@ -27,14 +27,17 @@
         </div>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-            const username = prompt("Enter username");
             const socket = io();
-            socket.emit("adduser", username);
-
             const messageInput = document.getElementById("message-input");
             const messageForm = document.getElementById("message-form");
+            const loginButton = document.getElementById("login-button");
 
-            
+            loginButton.addEventListener('click', () => {
+                const username = prompt("Enter username");
+                socket.emit("adduser", username);
+                messageForm.style.display = 'block';
+                loginButton.style.display = 'none';
+            })
 
             messageForm.addEventListener('submit', (e) => {
                 e.preventDefault();
