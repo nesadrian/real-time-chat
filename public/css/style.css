@@ -1,17 +1,17 @@
+/* Header */
+
 #header {
-    background-color: #f7fafc;
     height: 55px;
     background-color: #1a2432;
     display: flex;
-    align-items: center;
     position: relative;
     min-width: 750px;
+    align-items: center;
+    justify-content: center;
 }
 
 #header-title {
     font-size: 2em;
-    position: absolute;
-    right: 50%;
     color: #f7fafc;
 }
 
@@ -22,24 +22,18 @@
     border-width: 3px;
     border-style: solid;
     border-color: #81e6d9;
+    background-color: #262e3c;
+    color: #f7fafc;
+    height: 75%;
+    width: 100px;
 }
+
+/* Content */
 
 #content {
-    height: 83.5vh;
+    height: 80vh;
     min-width: 750px;
-    width: 100vw;
-    overflow:hidden;
-    overflow-y:scroll;
-    box-sizing: border-box;
-    padding: 20px;
-}
-
-#footer {
-    bottom: 0;
-    position: absolute;
-    height: 75px;
-    width: 100vw;
-    min-width: 750px;
+    width: 100%;
     box-sizing: border-box;
     padding: 20px;
 }
@@ -52,23 +46,32 @@
 
 #message-list-container {
     float: left;
-    background-color: #283141;
+    background-color: #262e3c;
     height: 100%;
     width: 70%;
     border-width: 3px;
     border-style: solid;
     border-color: #81e6d9;
     margin-right: 20px;
+    overflow-y: scroll;
 }
 
 #user-list-container {
     float: left;
-    width: 28.47%;
+    width: 27%;
     height: 100%;
     border-width: 3px;
     border-style: solid;
     border-color: #81e6d9;
-    background-color: #2d3748;
+    background-color: #262e3c;
+    overflow-y:scroll;
+}
+
+@media only screen and (max-width: 1026px) {
+    #user-list-container {
+        display: none;
+        
+    }
 }
 
 #user-list {
@@ -77,16 +80,28 @@
     color: #f7fafc;
 }
 
+/* Footer */
+
+#footer {
+    bottom: 0;
+    position: relative;
+    height: 100px;
+    width: 100vw;
+    min-width: 750px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
 #message-form {
     height: 100%;
     width: 100%;
-    display: none;
+    /*display: none;*/
 }
 
 #message-input {
     box-sizing: border-box;
     height: 100%;
-    width: 80%;
+    width: 85%;
     font-size: 100%;
     padding-top: 0;
     padding-bottom: 0;
@@ -95,16 +110,20 @@
     border-width: 3px;
     border-style: solid;
     border-color: #81e6d9;
-    background-color: #1a2432;
+    background-color: #262e3c;
     color: #f7fafc;
 }
 
 #message-submit {
+    right: 0;
     width: 10%;
     height: 100%;
+    margin-right: 20px;
     border-width: 3px;
     border-style: solid;
     border-color: #81e6d9;
+    background-color: #262e3c;
+    color: #f7fafc;
 }
 
 body {
