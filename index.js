@@ -5,9 +5,16 @@ const socketIO = require('socket.io')(http);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+http.listen(3000, () => {
 });
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/user-registration', (req, res) => {
+    res.sendFile(__dirname + '/user-registration.html')
+})
 
 const userList = [];
 
@@ -28,6 +35,3 @@ socketIO.on('connection', (socket) => {
         socketIO.emit('updateUserlist', userList);
     });
 })
-
-http.listen(3000, () => {
-});

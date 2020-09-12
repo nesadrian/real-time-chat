@@ -9,7 +9,7 @@
     <body>
         <div id="header">
             <h1 id="header-title">Real Time Chat</h1>
-            <button id="login-button">Login</button>
+            <a id="login-button" href="/user-registration">Login</a>
         </div>
         <div id="content">
             <div id="message-list-container">
@@ -32,12 +32,12 @@
             const messageForm = document.getElementById("message-form");
             const loginButton = document.getElementById("login-button");
 
-            loginButton.addEventListener('click', () => {
+            /*loginButton.addEventListener('click', () => {
                 const username = prompt("Enter username");
                 socket.emit("adduser", username);
                 messageForm.style.display = 'block';
                 loginButton.style.display = 'none';
-            })
+            })*/
 
             messageForm.addEventListener('submit', (e) => {
                 e.preventDefault();

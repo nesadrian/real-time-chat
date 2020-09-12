@@ -26,6 +26,11 @@
     color: #f7fafc;
     height: 75%;
     width: 100px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 /* Content */
@@ -124,6 +129,26 @@
     border-color: #81e6d9;
     background-color: #262e3c;
     color: #f7fafc;
+}
+
+/* User registration */
+
+#back-button {
+    position: absolute;
+    left: 0;
+    margin-left: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #81e6d9;
+    background-color: #262e3c;
+    color: #f7fafc;
+    height: 75%;
+    width: 100px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 body {
