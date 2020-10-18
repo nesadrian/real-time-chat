@@ -1,157 +1,25 @@
-/* Header */
-
-#header {
-    height: 55px;
-    background-color: #1a2432;
-    display: flex;
-    position: relative;
-    min-width: 750px;
-    align-items: center;
-    justify-content: center;
-}
-
-#header-title {
-    font-size: 2em;
-    color: #f7fafc;
-}
-
-#login-button {
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    background-color: #262e3c;
-    color: #f7fafc;
-    height: 75%;
-    width: 100px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-/* Content */
-
-#content {
-    height: 80vh;
-    min-width: 750px;
-    width: 100%;
+/* Minimal reset */
+html {
     box-sizing: border-box;
-    padding: 20px;
-}
-
-#message-list {
-    list-style-type: none;
-    font-size: 25px;
-    color: #f7fafc;
-}
-
-#message-list-container {
-    float: left;
-    background-color: #262e3c;
-    height: 100%;
-    width: 70%;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    margin-right: 20px;
-    overflow-y: scroll;
-}
-
-#user-list-container {
-    float: left;
-    width: 27%;
-    height: 100%;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    background-color: #262e3c;
-    overflow-y:scroll;
-}
-
-@media only screen and (max-width: 1026px) {
-    #user-list-container {
-        display: none;
-        
-    }
-}
-
-#user-list {
-    list-style-type: none;
-    font-size: 25px;
-    color: #f7fafc;
-}
-
-/* Footer */
-
-#footer {
-    bottom: 0;
-    position: relative;
-    height: 100px;
-    width: 100vw;
-    min-width: 750px;
-    box-sizing: border-box;
-    padding: 20px;
-}
-
-#message-form {
-    height: 100%;
-    width: 100%;
-    /*display: none;*/
-}
-
-#message-input {
-    box-sizing: border-box;
-    height: 100%;
-    width: 85%;
-    font-size: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    background-color: #262e3c;
-    color: #f7fafc;
-}
-
-#message-submit {
-    right: 0;
-    width: 10%;
-    height: 100%;
-    margin-right: 20px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    background-color: #262e3c;
-    color: #f7fafc;
-}
-
-/* User registration */
-
-#back-button {
-    position: absolute;
-    left: 0;
-    margin-left: 20px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #81e6d9;
-    background-color: #262e3c;
-    color: #f7fafc;
-    height: 75%;
-    width: 100px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-body {
-    background-color: #2d3748;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
-}
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
