@@ -2,18 +2,19 @@ const app = require('express')();
 const express = require('express');
 const http = require('http').createServer(app);
 const socketIO = require('socket.io')(http);
+const path = require('path');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
+app.set('view engine', 'pug'); 
 
 http.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/user-registration', (req, res) => {
-    res.sendFile(__dirname + '/user-registration.html')
+app.get('/login', (req, res) => {
+    res.render('login.pug', { title: "Login" })
 })
 
 const userList = [];
