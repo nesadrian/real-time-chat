@@ -4,10 +4,15 @@ const http = require('http').createServer(app);
 const socketIO = require('socket.io')(http);
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use('/src', express.static(path.join(__dirname, '/src')));
 app.set('view engine', 'pug'); 
 
 http.listen(3000, () => {
+});
+
+app.get('/messages', (req, res) => {
+    res.render('messages.pug', { title: "Messages" })
 });
 
 app.get('/register', (req, res) => {

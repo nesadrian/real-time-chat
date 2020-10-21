@@ -1,0 +1,14 @@
+html
+    head
+        title #{title}
+        link(rel='stylesheet' href='/public/css/style.css' type='text/css')
+        link(href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
+    body
+        main(class="home-container")
+            nav(class="nav-sidebar")
+                a(href="messages") Messages
+                a(href="contacts") Contacts
+                a(href="settings") Settings
+                a(href="logout") Logout
+            block content
+        block scripts

@@ -24,6 +24,10 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   --primary-color: #7E57C2;
   --primary-light-color: #b085f5;
@@ -37,12 +41,15 @@ img {
 main {
   display: flex;
   height: 100%;
+}
+
+.form-container {
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to right, var(--primary-dark-color), var(--primary-light-color));
 }
 
-/* Login */
+/* LOGIN */
 .login-container {
   display: flex;
   height: 500px;
@@ -113,4 +120,52 @@ input {
 .register-container form input {
   width: 47.5%;
   margin-top: 20px;
+}
+
+/* HOME */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100vh;
+  width: 200px;
+  background-color: var(--primary-color);
+}
+
+.nav-sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75px;
+  font-size: 25px;
+  color: var(--secondary-text-color)
+}
+
+.nav-sidebar a:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.nav-messages {
+  width: 350px;
+  background-color: #E0E0E0;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.messages-list-container {
+  height: 90vh;
+  width: 100%;
+}
+
+.messages-form {
+  display:flex
+}
+
+.messages-input {
+  border: solid 1px grey;
 }
