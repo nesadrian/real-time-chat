@@ -51,21 +51,21 @@ main {
   border-radius: 15px;
 }
 
-.login-container h1 {
+.form-title {
   font-size: 35px;
   font-weight: 600;
 }
 
-.login-input {
+.form-input {
   background-color: #E0E0E0;
 }
 
-.login-submit {
+.form-submit {
   color: var(--secondary-text-color);
   background-color: var(--secondary-dark-color);
 }
 
-.login-submit:hover {
+.form-submit:hover {
   background-color: var(--secondary-color);
   cursor: pointer;
 }
@@ -78,7 +78,7 @@ input {
   padding: 15px;
 }
 
-form {
+.login-container form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,4 +90,27 @@ form {
 .logo {
   width: 50%;
   align-self: center;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 60%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.register-container form {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.register-container form input {
+  width: 47.5%;
+  margin-top: 20px;
 }

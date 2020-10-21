@@ -10,7 +10,8 @@ app.set('view engine', 'pug');
 http.listen(3000, () => {
 });
 
-app.get('/', (req, res) => {
+app.get('/register', (req, res) => {
+    res.render('register.pug', { title: "Register" })
 });
 
 app.get('/login', (req, res) => {

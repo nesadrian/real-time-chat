@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+    section(class="register-container")
+        h1(class="form-title") Register
+        form
+            input(class="form-input" placeholder="FIRST NAME")
+            input(class="form-input" placeholder="LAST NAME")
+            input(class="form-input" placeholder="USERNAME")
+            input(class="form-input" placeholder="EMAIL")
+            input(class="form-input" placeholder="PASSWORD")
+            input(class="form-input" placeholder="CONFIRM PASSWORD")
+            input(class="form-submit" type="submit" value="REGISTER")
+        a(href="login") Login
