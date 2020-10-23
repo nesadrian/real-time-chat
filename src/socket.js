@@ -11,9 +11,11 @@ messageForm.onsubmit = (e) => {
 };
 
 socket.on('message', (msg, username) => {
-    const li = document.createElement("li");
-    li.textContent = username + ": " + msg;
-    document.querySelector(".messages-list-container").appendChild(li);
+    const msgContainer = document.createElement("div");
+    msgContainer.className = "messages-text-container-self messages-text-container"
+    msgContainer.textContent = msg;
+    const msgListContainer = document.querySelector(".messages-list-container");
+    msgListContainer.insertBefore(msgContainer, msgListContainer.lastChild);
 });
 
 //const loginButton = document.getElementById("login-button");
