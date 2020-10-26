@@ -1,5 +1,5 @@
 const socket = io();
-const messageInput = document.querySelector(".messages-input");
+const messageInput = document.querySelector(".messages-form_input");
 const messageForm = document.querySelector(".messages-form");
 
 const usernameSelf = Math.random()
@@ -15,10 +15,10 @@ messageForm.onsubmit = (e) => {
 
 socket.on('message', (msg, username) => {
     const msgContainer = document.createElement("div");
-    usernameSelf === username ? msgContainer.className = "messages-text-container-self messages-text-container"
-                              : msgContainer.className = "messages-text-container-other messages-text-container"
+    usernameSelf === username ? msgContainer.className = "messages-text messages-text--self"
+                              : msgContainer.className = "messages-text messages-text--other"
     msgContainer.textContent = username + ": " + msg;
-    const msgListContainer = document.querySelector(".messages-list-container");
+    const msgListContainer = document.querySelector(".messages-list");
     msgListContainer.appendChild(msgContainer);
 });
 

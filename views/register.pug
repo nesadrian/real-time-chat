@@ -1,14 +1,14 @@
 extends layout-form.pug
 
 block content
-    section(class="register-container")
-        h1(class="form-title") Register
-        form
-            input(class="form-input" placeholder="FIRST NAME")
-            input(class="form-input" placeholder="LAST NAME")
-            input(class="form-input" placeholder="USERNAME")
-            input(class="form-input" placeholder="EMAIL")
-            input(class="form-input" placeholder="PASSWORD")
-            input(class="form-input" placeholder="CONFIRM PASSWORD")
-            input(class="form-submit" type="submit" value="REGISTER")
+    section(class="auth-container auth-container--register")
+        h1(class="auth-form_title") Register
+        form(class="auth-form auth-form--register")
+            input(class="auth-form_input auth-form_input--register" placeholder="FIRST NAME")
+            input(class="auth-form_input auth-form_input--register" placeholder="LAST NAME")
+            input(class="auth-form_input auth-form_input--register" placeholder="USERNAME")
+            input(class="auth-form_input auth-form_input--register" placeholder="EMAIL")
+            input(class="auth-form_input auth-form_input--register" placeholder="PASSWORD")
+            input(class="auth-form_input auth-form_input--register" placeholder="CONFIRM PASSWORD")
+            input(class="auth-form_input auth-form_input--register auth-form_input--submit" type="submit" value="REGISTER")
         a(href="login") Login

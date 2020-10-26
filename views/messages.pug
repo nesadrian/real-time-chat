@@ -1,12 +1,12 @@
 extends layout-home.pug
 
 block content
-    nav(class="nav-messages")
+    nav(class="messages-sidebar")
     section(class="messages-container")
-        section(class="messages-list-container")
+        section(class="messages-list")
         form(class="messages-form")
-            input(class="messages-input" placeholder="Write something...")
-            input(class="form-submit" type="submit" value="Send")
+            input(class="messages-form_input" placeholder="Write something...")
+            input(class="messages-form_submit" type="submit" value="Send")
 
 block scripts
     script(type="text/javascript" src="/socket.io/socket.io.js")

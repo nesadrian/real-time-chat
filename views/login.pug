@@ -1,13 +1,13 @@
 extends layout-form.pug
 
 block content
-    section(class="login-container")
-        h1(class="logo") LOGO
-        form
-            h1(class="form-title") Login
-            input(class="form-input" placeholder="USERNAME")
-            input(class="form-input" placeholder="PASSWORD")
-            input(class="form-submit" type="submit" value="LOGIN")
+    section(class="auth-container")
+        h1(class="auth_logo") LOGO
+        form(class="auth-form auth-form--login")
+            h1(class="auth-form_title") Login
+            input(class="auth-form_input" placeholder="USERNAME")
+            input(class="auth-form_input" placeholder="PASSWORD")
+            input(class="auth-form_input auth-form_input--submit" type="submit" value="LOGIN")
             a(href="login") Forgot username?
             a(href="login") Forgot password?
             a(href="register") Register

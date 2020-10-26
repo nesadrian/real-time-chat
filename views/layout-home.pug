@@ -5,10 +5,10 @@ html
         link(href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
     body
         main(class="home-container")
-            nav(class="nav-sidebar")
-                a(href="messages") Messages
-                a(href="contacts") Contacts
-                a(href="settings") Settings
-                a(href="logout") Logout
+            nav(class="home-sidebar")
+                a(class="home-sidebar_btn" href="messages") Messages
+                a(class="home-sidebar_btn" href="contacts") Contacts
+                a(class="home-sidebar_btn" href="settings") Settings
+                a(class="home-sidebar_btn" href="logout") Logout
             block content
         block scripts

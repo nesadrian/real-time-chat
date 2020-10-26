@@ -36,97 +36,90 @@ a {
   --secondary-light-color: #9cff57;
   --secondary-dark-color: #1faa00;
   --secondary-text-color: #FFF;
-
 }
   
 main {
   display: flex;
-  flex:1 1 auto;
+  flex: 1 1 auto;
   height: 100%;
   width: 100%;
 }
 
-.form-container {
+/* Authorization */
+.main--auth {
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(to right, var(--primary-dark-color), var(--primary-light-color));
 }
 
-/* LOGIN */
-.login-container {
+.auth-container {
   display: flex;
   height: 500px;
   width: 60%;
   background-color: white;
   border-radius: 15px;
+  padding: 50px;
 }
 
-.form-title {
+.auth-form {
+  display: flex;
+}
+
+.auth-form_title {
   font-size: 35px;
   font-weight: 600;
 }
 
-.form-input {
-  background-color: #E0E0E0;
-}
-
-.form-submit {
-  color: var(--secondary-text-color);
-  background-color: var(--secondary-dark-color);
-}
-
-.form-submit:hover {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-}
-
-input {
+.auth-form_input {
   width: 80%;
   height: 40px;
   border-radius: 15px;
   border: none;
   padding: 15px;
+  background-color: #E0E0E0;
 }
 
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 50%;
-  padding: 50px;
+.auth-form_input--submit {
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-dark-color);
 }
 
-.logo {
+.auth-form_input--submit:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.auth_logo {
   width: 50%;
   align-self: center;
 }
 
-.register-container {
-  display: flex;
+/* Authorization --login */
+.auth-form--login {
   flex-direction: column;
   align-items: center;
-  height: 500px;
-  width: 60%;
-  background-color: white;
-  border-radius: 15px;
-  padding: 15px;
+  justify-content: space-around;
+  width: 50%;
 }
 
-.register-container form {
-  display: flex;
+/* Authorization --register */
+.auth-container--register {
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form--register {
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 50px;
 }
 
-.register-container form input {
+.auth-form_input--register {
   width: 47.5%;
   margin-top: 20px;
 }
 
 /* HOME */
-nav {
+.home-sidebar {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -135,7 +128,7 @@ nav {
   background-color: var(--primary-color);
 }
 
-.nav-sidebar a {
+.home-sidebar_btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,11 +138,12 @@ nav {
   color: var(--secondary-text-color)
 }
 
-.nav-sidebar a:hover {
+.home-sidebar_btn:hover {
   background-color: var(--primary-dark-color);
 }
 
-.nav-messages {
+/* Home --messages */
+.messages-sidebar {
   width: 15vw;
   background-color: #E0E0E0;
 }
@@ -160,7 +154,7 @@ nav {
   width: 70vw;
 }
 
-.messages-list-container {
+.messages-list {
   display: flex;
   flex-direction: column;
   height: 90vh;
@@ -172,11 +166,11 @@ nav {
   display:flex
 }
 
-.messages-input {
+.messages-form_input {
   border: solid 1px grey;
 }
 
-.messages-text-container {
+.messages-text {
   word-wrap: break-word;
   display: inline-block;
   max-width: 100%;
@@ -187,12 +181,12 @@ nav {
   color: white;
 }
 
-.messages-text-container-other {
+.messages-text--other {
   align-self: flex-end;
   background-color: #E0E0E0;
 }
 
-.messages-text-container-self {
+.messages-text--self {
   align-self: flex-start;
   background-color: var(--primary-color);
 }
