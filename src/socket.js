@@ -1,7 +1,10 @@
 const socket = io();
 const messageInput = document.querySelector(".messages-input");
 const messageForm = document.querySelector(".messages-form");
- 
+
+const usernameSelf = Math.random()
+socket.emit("adduser", usernameSelf);
+
 messageForm.onsubmit = (e) => { 
     e.preventDefault();
     if(messageInput.value) {
@@ -12,10 +15,11 @@ messageForm.onsubmit = (e) => {
 
 socket.on('message', (msg, username) => {
     const msgContainer = document.createElement("div");
-    msgContainer.className = "messages-text-container-self messages-text-container"
-    msgContainer.textContent = msg;
+    usernameSelf === username ? msgContainer.className = "messages-text-container-self messages-text-container"
+                              : msgContainer.className = "messages-text-container-other messages-text-container"
+    msgContainer.textContent = username + ": " + msg;
     const msgListContainer = document.querySelector(".messages-list-container");
-    msgListContainer.insertBefore(msgContainer, msgListContainer.lastChild);
+    msgListContainer.appendChild(msgContainer);
 });
 
 //const loginButton = document.getElementById("login-button");
