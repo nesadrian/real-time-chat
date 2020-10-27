@@ -3,42 +3,19 @@ const express = require('express');
 const http = require('http').createServer(app);
 const socketIO = require('socket.io')(http);
 const path = require('path');
+const { handleSocketEvents } = require('./src/services/socketServer');
+const { loginRouter } = require('./src/routes/login');
+const { registerRouter } = require('./src/routes/register');
+const { messagesRouter } = require('./src/routes/messages');
 
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/src', express.static(path.join(__dirname, '/src')));
 app.set('view engine', 'pug'); 
 
-http.listen(3000, () => {
-});
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/messages', messagesRouter);
 
-app.get('/messages', (req, res) => {
-    res.render('home/messages.pug', { title: "Messages" })
-});
+handleSocketEvents(socketIO);
 
-app.get('/register', (req, res) => {
-    res.render('auth/register.pug', { title: "Register" })
-});
-
-app.get('/login', (req, res) => {
-    res.render('auth/login.pug', { title: "Login" })
-})
-
-const userList = [];
-
-socketIO.on('connection', (socket) => {
-    socket.on('adduser', (username) => {
-        socket.username = username;
-        userList.push(username);
-        socketIO.emit('updateUserlist', userList);
-    })
-
-    socket.on('message', (msg) => {
-        socketIO.emit('message', msg, socket.username);
-    })
-
-    socket.on('disconnect', () => {
-        var index = userList.indexOf(socket.username);
-        userList.splice(index, 1);
-        socketIO.emit('updateUserlist', userList);
-    });
-})
+module.exports.http = http;
