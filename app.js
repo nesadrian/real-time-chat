@@ -12,15 +12,15 @@ http.listen(3000, () => {
 });
 
 app.get('/messages', (req, res) => {
-    res.render('messages.pug', { title: "Messages" })
+    res.render('home/messages.pug', { title: "Messages" })
 });
 
 app.get('/register', (req, res) => {
-    res.render('register.pug', { title: "Register" })
+    res.render('auth/register.pug', { title: "Register" })
 });
 
 app.get('/login', (req, res) => {
-    res.render('login.pug', { title: "Login" })
+    res.render('auth/login.pug', { title: "Login" })
 })
 
 const userList = [];
