@@ -1,3 +1,3 @@
-const { http, a } = require('./app.js');
+const { http } = require('./app.js');
 
 http.listen(3000);

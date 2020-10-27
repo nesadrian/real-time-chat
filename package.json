@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "lint": "eslint ."
   },
   "author": "Adrian Nesvik",
   "license": "ISC",
@@ -13,5 +14,10 @@
     "express": "^4.17.1",
     "pug": "^3.0.0",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
