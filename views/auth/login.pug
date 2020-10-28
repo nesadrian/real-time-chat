@@ -3,10 +3,10 @@ extends layout-auth.pug
 block content
     section(class="auth-container")
         h1(class="auth_logo") LOGO
-        form(class="auth-form auth-form--login")
+        form(class="auth-form auth-form--login" method="POST")
             h1(class="auth-form_title") Login
-            input(class="auth-form_input" placeholder="USERNAME")
-            input(class="auth-form_input" placeholder="PASSWORD")
+            input(class="auth-form_input" name="username" placeholder="USERNAME")
+            input(class="auth-form_input" name="password" placeholder="PASSWORD")
             input(class="auth-form_input auth-form_input--submit" type="submit" value="LOGIN")
             a(href="login") Forgot username?
             a(href="login") Forgot password?
