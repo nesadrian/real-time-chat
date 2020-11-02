@@ -160,6 +160,7 @@ main {
   height: 90vh;
   width: 100%;
   padding: 20px;
+  overflow-y: scroll;
 }
 
 .messages-form {

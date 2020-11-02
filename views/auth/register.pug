@@ -3,12 +3,12 @@ extends layout-auth.pug
 block content
     section(class="auth-container auth-container--register")
         h1(class="auth-form_title") Register
-        form(class="auth-form auth-form--register")
-            input(class="auth-form_input auth-form_input--register" placeholder="FIRST NAME")
-            input(class="auth-form_input auth-form_input--register" placeholder="LAST NAME")
-            input(class="auth-form_input auth-form_input--register" placeholder="USERNAME")
-            input(class="auth-form_input auth-form_input--register" placeholder="EMAIL")
-            input(class="auth-form_input auth-form_input--register" placeholder="PASSWORD")
-            input(class="auth-form_input auth-form_input--register" placeholder="CONFIRM PASSWORD")
+        form(class="auth-form auth-form--register" method="POST")
+            input(class="auth-form_input auth-form_input--register" name="firstname" placeholder="FIRST NAME")
+            input(class="auth-form_input auth-form_input--register" name="lastname" placeholder="LAST NAME")
+            input(class="auth-form_input auth-form_input--register" name="username" placeholder="USERNAME")
+            input(class="auth-form_input auth-form_input--register" name="email" placeholder="EMAIL")
+            input(class="auth-form_input auth-form_input--register" name="password" placeholder="PASSWORD")
+            input(class="auth-form_input auth-form_input--register" name="confirmedpassword" placeholder="CONFIRM PASSWORD")
             input(class="auth-form_input auth-form_input--register auth-form_input--submit" type="submit" value="REGISTER")
         a(href="login") Login
