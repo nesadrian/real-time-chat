@@ -6,7 +6,24 @@ const encodeToken = data => jwt.sign(data, key)
 
 const decodeToken = token => jwt.verify(token, key);
 
-modules.exports = {
+const authReq = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if (token) {
+        const authenticated = decodeToken(token);
+        if (authenticated) {
+            next();
+        }
+        else {
+            return res.sendStatus(403);
+        }
+    } else {
+        res.sendStatus(401);
+    }
+};
+
+module.exports = {
     encodeToken,
-    decodeToken
+    decodeToken,
+    authReq
 }

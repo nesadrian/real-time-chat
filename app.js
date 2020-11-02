@@ -4,6 +4,8 @@ const http = require('http').createServer(app);
 const socketIO = require('socket.io')(http);
 const path = require('path');
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const { authReq } = require('./src/services/authentication');
 const { handleSocketEvents } = require('./src/services/socketServer');
 const { loginRouter } = require('./src/routes/login');
 const { registerRouter } = require('./src/routes/register');
@@ -13,11 +15,12 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/src', express.static(path.join(__dirname, '/src')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser())
 app.set('view engine', 'pug');
 
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
-app.use('/messages', messagesRouter);
+app.use('/messages', authReq, messagesRouter);
 
 handleSocketEvents(socketIO);
 
