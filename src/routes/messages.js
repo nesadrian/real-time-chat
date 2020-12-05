@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('home/messages.pug', { title: "Messages" })
+    res.render('home/messages.pug', { title: 'Messages' });
 });
 
 module.exports.messagesRouter = router;
